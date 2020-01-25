@@ -35,13 +35,13 @@ module.exports = (user, tasks) => html(`
   ` : ''}
   <div class="tasks">
     ${tasks.map(task => `
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         ${task.finished ? `<h5 class="card-header">Finished</h5>` : ''}
         <div class="card-body">
           <h5 class="card-title">${task.name}</h5>
           <p class="card-text">${task.description}</p>
           ${!task.finished ? `
-            <form action="todo/${task.id}/finish" method="post">
+            <form action="todo/${task.id}/finish" method="get">
               <button type="submit" class="btn btn-secondary">Finish</button>
             </form>      
           ` : ''}

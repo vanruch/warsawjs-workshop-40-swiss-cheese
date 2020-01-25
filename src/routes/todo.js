@@ -17,8 +17,7 @@ module.exports = (todoService) => {
     res.redirect('/todo')
   });
 
-  router.post('/:taskId/finish', async (req, res) => {
-    console.log(req.params.taskId)
+  router.get('/:taskId/finish', async (req, res) => {
     await todoService.markAsDone(req.params.taskId);
     res.redirect('/todo')
   });

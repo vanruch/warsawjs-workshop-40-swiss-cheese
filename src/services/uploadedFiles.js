@@ -1,8 +1,13 @@
 const fs = require('fs').promises;
 
 const uploadedFileNames = async (query = '') => {
-  const fileNames = await fs.readdir('uploads');
-  return fileNames.filter(fn => fn.toLowerCase().includes(query.toLowerCase()))
+  try {
+    const fileNames = await fs.readdir('uploads');
+    return fileNames.filter(
+      fn => fn.toLowerCase().includes(query.toLowerCase()))
+  } catch (e) {
+    return [];
+  }
 };
 
 const getFile = async (path) => {

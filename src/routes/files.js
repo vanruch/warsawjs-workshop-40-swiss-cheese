@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const page = require('../../views/files');
-const {uploadedFileNames} = require('../../services/uploadedFiles');
+const page = require('../views/files');
+const {uploadedFileNames} = require('../services/uploadedFiles');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -15,7 +15,7 @@ router.post('/', ((req, res) => {
   res.redirect('/files')
 }));
 router.use('/:path', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../../uploads', req.params.path));
+  res.sendFile(path.join(__dirname, '../../uploads', req.params.path));
 });
 
 module.exports = router;
