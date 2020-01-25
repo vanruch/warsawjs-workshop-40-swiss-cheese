@@ -1,0 +1,8 @@
+version: '3'
+services:
+  postgresql:
+    image: postgres:alpine
+    environment:
+      POSTGRES_DB: warsawjs_db
+    ports:
+    - 5432:5432

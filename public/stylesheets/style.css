@@ -1,0 +1,24 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.content {
+  padding: 20px
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+.card form {
+  margin-bottom: 0;
+}
+
+.card {
+  margin: 10px;
+}
+
+.tasks {
+  display: flex;
+  flex-flow: row wrap;
+}
